@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="robots" content="noindex"><!-- muestra: que Google no la indexe hasta que esté aprobada -->
+  <title>Entradas · Muestra de fin de año GO!FIT</title>
+  <meta name="description" content="Comprá tu entrada para la muestra de fin de año de GO!FIT San Rafael. Elegí la función, transferí y mandá el comprobante por WhatsApp.">
+  <meta name="theme-color" content="#10130b">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800;1,900&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="entradas.css">
+</head>
+<body>
+
+  <a class="skip" href="#comprar">Saltar a la compra</a>
+
+  <header class="nav">
+    <a href="index.html" class="nav__brand" aria-label="GO!FIT, volver al inicio">
+      <img src="img/logo.jpg" alt="" width="36" height="36">
+      <span>GO!FIT</span>
+    </a>
+    <a href="index.html" class="nav__back">Volver a la web</a>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- COMPLETAR: todo lo de esta página es de ejemplo (fechas, lugar, precio, cupos) -->
+    <section class="show" aria-labelledby="titulo">
+      <h1 id="titulo" class="show__title">
+        <span>Todo el año</span>
+        <span class="show__title-accent">en un escenario.</span>
+      </h1>
+      <p class="show__lead">La muestra de fin de año de GO!FIT: las alumnas de ritmos, zumba y funcional suben a mostrar lo que entrenaron. Una hora y cuarto de show, música fuerte y mucha familia en la tribuna.</p>
+      <ul class="facts">
+        <li class="facts__item facts__item--when">Sáb 13 y dom 14 de diciembre</li>
+        <li class="facts__item">Salón a confirmar, San Rafael</li>
+        <li class="facts__item">$8.000 <span class="facts__note">entrada general</span></li>
+      </ul>
+      <a href="#comprar" class="btn show__cta">Elegí tu función</a>
+    </section>
+
+    <section id="comprar" class="buy section--alt" aria-labelledby="comprar-titulo" tabindex="-1">
+      <div class="buy__inner">
+        <h2 id="comprar-titulo" class="section__title">Comprá tu entrada</h2>
+
+        <form id="ticket-form" class="ticket" novalidate>
+
+          <div class="ticket__steps" id="pasos">
+            <fieldset class="step" id="funciones" aria-describedby="funcion-error">
+              <legend>Elegí la función</legend>
+              <div class="shows">
+                <label class="show-opt">
+                  <input type="radio" name="funcion" value="Sábado 13/12 · 20:00 h" data-cupos="42">
+                  <span class="show-opt__day">Sábado 13 <span class="sr-only">de diciembre</span></span>
+                  <span class="show-opt__time">20:00 h</span>
+                  <span class="show-opt__cupos">Quedan 42</span>
+                </label>
+                <label class="show-opt">
+                  <input type="radio" name="funcion" value="Domingo 14/12 · 18:00 h" data-cupos="9">
+                  <span class="show-opt__day">Domingo 14 <span class="sr-only">de diciembre</span></span>
+                  <span class="show-opt__time">18:00 h</span>
+                  <span class="show-opt__cupos">Últimas 9</span>
+                </label>
+                <label class="show-opt">
+                  <input type="radio" name="funcion" value="Domingo 14/12 · 21:00 h" data-cupos="0" disabled>
+                  <span class="show-opt__day">Domingo 14 <span class="sr-only">de diciembre</span></span>
+                  <span class="show-opt__time">21:00 h</span>
+                  <span class="show-opt__cupos">Agotada</span>
+                </label>
+              </div>
+              <p class="shows__empty" id="shows-empty" hidden>
+                Se agotaron todas las funciones.
+                <a href="https://wa.me/5492604577926?text=Hola!%20Quiero%20anotarme%20en%20la%20lista%20de%20espera%20para%20la%20muestra%20de%20fin%20de%20a%C3%B1o%20de%20GO!FIT." target="_blank" rel="noopener">Escribinos por WhatsApp</a> y te anotamos en la lista de espera.
+              </p>
+              <p class="field-error" id="funcion-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend>¿Cuántas entradas?</legend>
+              <div class="qty">
+                <button type="button" class="qty__btn" data-step="-1" aria-label="Una entrada menos" aria-controls="qty">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+                </button>
+                <output id="qty" class="qty__value" aria-live="polite" aria-label="Cantidad de entradas">1</output>
+                <button type="button" class="qty__btn" data-step="1" aria-label="Una entrada más" aria-controls="qty">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>
+                </button>
+                <p class="qty__note" id="qty-note" aria-live="polite">Hasta 6 por compra. Menores de 3 no pagan.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend>¿A nombre de quién?</legend>
+              <div class="field">
+                <label for="nombre">Nombre y apellido</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name" autocapitalize="words" enterkeyhint="next" maxlength="80" required aria-describedby="nombre-error">
+                <p class="field-error" id="nombre-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="alumna">¿Venís a ver a alguna alumna? <span class="field__opt">Opcional</span></label>
+                <input type="text" id="alumna" name="alumna" autocomplete="off" autocapitalize="words" enterkeyhint="done" maxlength="80">
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="ticket__pay" id="pago" tabindex="-1">
+            <div class="pay">
+              <h3 class="pay__title">Tu pedido</h3>
+              <dl class="order">
+                <div class="order__row"><dt>Función</dt><dd id="sum-funcion" class="is-empty">Elegí una función</dd></div>
+                <div class="order__row"><dt>Entradas</dt><dd id="sum-cantidad">1 × $8.000</dd></div>
+                <div class="order__row"><dt>A nombre de</dt><dd id="sum-nombre" class="is-empty">Falta tu nombre</dd></div>
+                <div class="order__row order__row--total"><dt>Total</dt><dd><output id="total" class="order__total">$8.000</output></dd></div>
+              </dl>
+
+              <ol class="pay__steps">
+                <li>
+                  <p class="pay__step-text">Transferí el total al alias</p>
+                  <div class="alias">
+                    <p class="alias__value" id="alias">yasminlamastrola</p>
+                    <button type="button" class="alias__copy" id="copy-alias" aria-describedby="alias">Copiar alias</button>
+                  </div>
+                  <p class="alias__note">A nombre de Yasmin Quiroga. <span id="copy-status" class="alias__status" role="status"></span></p>
+                </li>
+                <li>
+                  <p class="pay__step-text">Mandá el comprobante por WhatsApp</p>
+                  <button type="submit" class="btn btn--block" id="submit">Abrir WhatsApp con mi pedido</button>
+                  <p class="pay__hint">Se abre el chat con tu pedido ya escrito. Adjuntá la captura de la transferencia y te confirmamos por ahí.</p>
+                </li>
+              </ol>
+
+              <div class="sent" id="sent" role="status" hidden>
+                <p class="sent__text" id="sent-text"></p>
+                <a class="sent__link" id="sent-link" href="https://wa.me/5492604577926" target="_blank" rel="noopener">Abrir WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- Resumen pegajoso en el celular: lleva al pedido mientras se completan los pasos -->
+    <a class="dock" id="dock" href="#pago" inert>
+      <span class="dock__info">
+        <span class="dock__what" id="dock-what">Elegí una función</span>
+        <span class="dock__total" id="dock-total">$8.000</span>
+      </span>
+      <span class="dock__cta">Ver pedido</span>
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <img src="img/logo.jpg" alt="Logo de GO!FIT" width="48" height="48">
+    <p class="footer__tag">Energía, ritmo y pasión.</p>
+    <p class="footer__copy">© <span id="year">2026</span> GO!FIT · San Rafael</p>
+  </footer>
+
+  <script src="entradas.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Solo se publica la web; lo demás queda local
+SUBIR A NETLIFY/
+*.zip
+_respaldo-*/
+.impeccable/
+707446784_*.jpg
